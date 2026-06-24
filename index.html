@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𐌀Ꮤ𐌀𐌍 | Wiki</title>
     <style>
-        /* Exact FMHY Wiki Interface Reconstruction */
+        /* Exact FMHY Wiki Interface Style Override */
         html, body {
             background-color: #09090b !important;
             color: #e4e4e7 !important;
@@ -15,7 +15,6 @@
             text-align: left !important;
         }
 
-        /* Top Bar Interface Header */
         .fmhy-topbar {
             position: fixed !important;
             top: 0 !important;
@@ -30,12 +29,6 @@
             padding: 0 24px !important;
             z-index: 100 !important;
             box-sizing: border-box !important;
-        }
-
-        .brand-section {
-            display: flex !important;
-            align-items: center !important;
-            gap: 12px !important;
         }
 
         .logo-text {
@@ -55,7 +48,6 @@
             color: #a1a1aa !important;
         }
 
-        /* Master Application Layout Split */
         .layout-wrapper {
             display: flex !important;
             margin-top: 56px !important;
@@ -63,7 +55,6 @@
             text-align: left !important;
         }
 
-        /* Left-Hand Sidebar Panel */
         aside.wiki-sidebar {
             width: 260px !important;
             background-color: #18181b !important;
@@ -97,7 +88,6 @@
 
         .sidebar-menu li {
             margin-bottom: 8px !important;
-            text-align: left !important;
         }
 
         .sidebar-menu a {
@@ -106,14 +96,12 @@
             font-size: 0.9rem !important;
             display: block !important;
             padding: 4px 0 !important;
-            text-align: left !important;
         }
 
         .sidebar-menu a:hover {
-            color: #22d3ee !important;
+            color: #00ffcc !important;
         }
 
-        /* Left Aligned Clean Content Area */
         main.wiki-content {
             margin-left: 260px !important;
             padding: 40px 60px !important;
@@ -128,27 +116,23 @@
             color: #ffffff !important;
             font-weight: 800 !important;
             margin: 0 0 6px 0 !important;
-            text-align: left !important;
         }
 
         .page-desc {
             color: #a1a1aa !important;
             font-size: 1rem !important;
             margin-bottom: 32px !important;
-            text-align: left !important;
         }
 
         .section-headline {
-            font-size: 1.5rem !important;
+            font-size: 1.4rem !important;
             color: #ffffff !important;
             font-weight: 700 !important;
             margin: 40px 0 16px 0 !important;
             padding-bottom: 8px !important;
             border-bottom: 1px solid #27272a !important;
-            text-align: left !important;
         }
 
-        /* Clean Authentic Link Directory Stream */
         .directory-stream {
             padding-left: 20px !important;
             margin: 0 !important;
@@ -161,17 +145,14 @@
             line-height: 1.6 !important;
             list-style-type: disc !important;
             color: #e4e4e7 !important;
-            text-align: left !important;
         }
 
-        /* Neon Teal Bullets */
         .directory-stream li::marker {
-            color: #22d3ee !important;
+            color: #00ffcc !important;
         }
 
-        /* High Visibility Inline Links */
         .directory-stream a {
-            color: #22d3ee !important;
+            color: #00ffcc !important;
             text-decoration: none !important;
             font-weight: 700 !important;
         }
@@ -184,29 +165,42 @@
             color: #a1a1aa !important;
         }
 
-        /* Bottom Curated Anchor Panel */
         .curated-anchor {
             margin-top: 60px !important;
             padding-top: 24px !important;
             border-top: 1px solid #27272a !important;
-            text-align: left !important;
+        }
+
+        .footer-title {
+            color: #71717a !important;
+            font-size: 0.85rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            margin-bottom: 15px !important;
+        }
+
+        .vault-grid {
+            display: flex !important;
+            gap: 12px !important;
+            flex-wrap: wrap !important;
         }
 
         .download-badge {
             color: #ffffff !important;
             background-color: #18181b !important;
             border: 1px solid #3f3f46 !important;
-            padding: 10px 20px !important;
+            padding: 10px 18px !important;
             text-decoration: none !important;
             border-radius: 6px !important;
-            font-size: 0.88rem !important;
+            font-size: 0.85rem !important;
             font-weight: 600 !important;
-            display: inline-block !important;
+            transition: all 0.2s ease !important;
         }
 
         .download-badge:hover {
-            border-color: #22d3ee !important;
-            color: #22d3ee !important;
+            border-color: #00ffcc !important;
+            color: #00ffcc !important;
+            background-color: #09090b !important;
         }
     </style>
 </head>
@@ -221,27 +215,31 @@
 
     <div class="layout-wrapper">
         <aside class="wiki-sidebar">
-            <div class="sidebar-title">Wiki Navigation</div>
+            <div class="sidebar-title">Niches</div>
             <ul class="sidebar-menu">
-                <li><a href="#utilities">📡 Global Utilities</a></li>
-                <li><a href="#android">🤖 Android Ecosystem</a></li>
-                <li><a href="#media">🎬 Media & Streaming</a></li>
+                <li><a href="#shadow-codex">🥷 Shadow Codex V1</a></li>
+                <li><a href="#spicy-apps">🌶️ Spicy App Codex</a></li>
+                <li><a href="#smart-tv">📺 Smart TV & IPTV Codex</a></li>
             </ul>
         </aside>
 
         <main class="wiki-content">
-            <h1 class="page-header">Directory</h1>
-            <div class="page-desc">Clean, unfiltered collection of decentralized systems and specialized resources.</div>
+            <h1 class="page-header">Index Directory</h1>
+            <div class="page-desc">Curated index streams mapping direct source links parsed directly out of individual niche archives.</div>
 
-            <div id="utilities" class="section-headline">Global Utilities & Live Tools</div>
+            <div id="shadow-codex" class="section-headline">The Shadow Codex V1</div>
             <ul class="directory-stream">
                 <li>
                     <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
-                    <span class="item-desc">— Unfiltered public flight tracking interface tracking raw crowd-sourced feeds.</span>
+                    <span class="item-desc">— Unfiltered public flight tracking database tracking raw crowd-sourced feeds.</span>
                 </li>
                 <li>
                     <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
                     <span class="item-desc">— Enterprise message router parsing system webhooks and events into live strings.</span>
+                </li>
+                <li>
+                    <a href="https://creepiest.com" target="_blank">Creepiest Index</a> 
+                    <span class="item-desc">— Archival project logging unconventional web interfaces and unique digital artifacts.</span>
                 </li>
                 <li>
                     <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
@@ -253,7 +251,7 @@
                 </li>
             </ul>
 
-            <div id="android" class="section-headline">Android Deployment & Managers</div>
+            <div id="spicy-apps" class="section-headline">The Spicy App Codex</div>
             <ul class="directory-stream">
                 <li>
                     <a href="https://f-droid.org" target="_blank">F-Droid Ecosystem</a> 
@@ -265,20 +263,21 @@
                 </li>
             </ul>
 
-            <div id="media" class="section-headline">Streaming Networks & Media</div>
+            <div id="smart-tv" class="section-headline">The Smart TV & IPTV Codex</div>
             <ul class="directory-stream">
                 <li>
                     <a href="https://www.stremio.com" target="_blank">Stremio Core</a> 
                     <span class="item-desc">— Highly modular content protocol aggregator reading metadata links and stream directories.</span>
                 </li>
-                <li>
-                    <a href="https://creepiest.com" target="_blank">Creepiest Index</a> 
-                    <span class="item-desc">— Archival project logging unconventional web interfaces and unique digital artifacts.</span>
-                </li>
             </ul>
 
             <div class="curated-anchor">
-                <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download class="download-badge">📁 Download Complete Raw PDF Archive</a>
+                <div class="footer-title">Raw Source Archives</div>
+                <div class="vault-grid">
+                    <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download class="download-badge">📁 Shadow Codex V1.pdf</a>
+                    <a href="assets/docs/THE_SPICY_APP_CODEX.pdf" download class="download-badge">📁 Spicy App Codex.pdf</a>
+                    <a href="assets/docs/THE_SMART_TV_AND_IPTV_CODEX.pdf" download class="download-badge">📁 Smart TV & IPTV Codex.pdf</a>
+                </div>
             </div>
         </main>
     </div>
