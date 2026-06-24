@@ -3,225 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𐌀Ꮤ𐌀𐌍</title>
+    <title>𐌀Ꮤ𐌀𐌍 | Wiki</title>
     <style>
-        /* Strict FMHY Wiki Layout Clone */
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
+        /* Exact FMHY Wiki Interface Reconstruction */
+        html, body {
+            background-color: #09090b !important;
+            color: #e4e4e7 !important;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+            margin: 0 !important;
+            padding: 0 !important;
             text-align: left !important;
         }
 
-        /* Fixed Left Wiki Navigation Sidebar */
-        aside {
-            width: 240px;
-            background-color: #161616;
-            border-right: 1px solid #2d2d2d;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 30px 20px;
-            box-sizing: border-box;
+        /* Top Bar Interface Header */
+        .fmhy-topbar {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: 56px !important;
+            background-color: #18181b !important;
+            border-bottom: 1px solid #27272a !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 0 24px !important;
+            z-index: 100 !important;
+            box-sizing: border-box !important;
+        }
+
+        .brand-section {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+
+        .logo-text {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            letter-spacing: 1px !important;
+        }
+
+        .search-container {
+            background-color: #27272a !important;
+            border: 1px solid #3f3f46 !important;
+            border-radius: 6px !important;
+            padding: 6px 12px !important;
+            width: 240px !important;
+            font-size: 0.85rem !important;
+            color: #a1a1aa !important;
+        }
+
+        /* Master Application Layout Split */
+        .layout-wrapper {
+            display: flex !important;
+            margin-top: 56px !important;
+            min-height: calc(100vh - 56px) !important;
             text-align: left !important;
         }
 
-        aside h3 {
-            color: #888888;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-            margin-top: 0;
-        }
-
-        aside ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        aside ul li {
-            margin-bottom: 14px;
-        }
-
-        aside ul li a {
-            color: #b0b0b0;
-            text-decoration: none;
-            font-size: 0.92rem;
-            transition: color 0.2s;
-        }
-
-        aside ul li a:hover {
-            color: #00ffcc;
-        }
-
-        /* Main Content Stream (Pushed right to clear sidebar) */
-        main {
-            margin-left: 240px;
-            padding: 40px 50px;
-            max-width: 900px;
-            width: 100%;
-            box-sizing: border-box;
+        /* Left-Hand Sidebar Panel */
+        aside.wiki-sidebar {
+            width: 260px !important;
+            background-color: #18181b !important;
+            border-right: 1px solid #27272a !important;
+            position: fixed !important;
+            top: 56px !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            padding: 24px !important;
+            box-sizing: border-box !important;
+            overflow-y: auto !important;
             text-align: left !important;
         }
 
-        h1 {
-            color: #ffffff;
-            font-size: 2rem;
-            margin-top: 0;
-            margin-bottom: 5px;
-            font-weight: 700;
+        .sidebar-title {
+            color: #a1a1aa !important;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            margin-bottom: 12px !important;
             text-align: left !important;
         }
 
-        .subtitle {
-            color: #777777;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
+        .sidebar-menu {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 0 24px 0 !important;
             text-align: left !important;
         }
 
-        .section-header {
-            font-size: 1.4rem;
-            color: #ffffff;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #2d2d2d;
+        .sidebar-menu li {
+            margin-bottom: 8px !important;
             text-align: left !important;
         }
 
-        .fmhy-list {
-            padding-left: 20px;
-            margin: 0;
+        .sidebar-menu a {
+            color: #cbd5e1 !important;
+            text-decoration: none !important;
+            font-size: 0.9rem !important;
+            display: block !important;
+            padding: 4px 0 !important;
             text-align: left !important;
         }
 
-        .fmhy-list li {
-            margin-bottom: 14px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            list-style-type: disc;
-            color: #e0e0e0;
+        .sidebar-menu a:hover {
+            color: #22d3ee !important;
+        }
+
+        /* Left Aligned Clean Content Area */
+        main.wiki-content {
+            margin-left: 260px !important;
+            padding: 40px 60px !important;
+            max-width: 840px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
             text-align: left !important;
         }
 
-        /* Target bullet dots */
-        .fmhy-list li ::marker {
-            color: #00ffcc;
-        }
-
-        /* Classic FMHY Inline bold links */
-        .fmhy-list a {
-            color: #00ffcc;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .fmhy-list a:hover {
-            text-decoration: underline;
-        }
-
-        .desc {
-            color: #b0b0b0;
-        }
-
-        /* Footer Vault Panel */
-        .footer-vault {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #2d2d2d;
+        .page-header {
+            font-size: 2.2rem !important;
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            margin: 0 0 6px 0 !important;
             text-align: left !important;
         }
 
-        .footer-vault a {
-            color: #ffffff;
-            background-color: #1c1c1c;
-            border: 1px solid #333333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            display: inline-block;
-            transition: border-color 0.2s;
+        .page-desc {
+            color: #a1a1aa !important;
+            font-size: 1rem !important;
+            margin-bottom: 32px !important;
+            text-align: left !important;
         }
 
-        .footer-vault a:hover {
-            border-color: #00ffcc;
-            color: #00ffcc;
+        .section-headline {
+            font-size: 1.5rem !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            margin: 40px 0 16px 0 !important;
+            padding-bottom: 8px !important;
+            border-bottom: 1px solid #27272a !important;
+            text-align: left !important;
+        }
+
+        /* Clean Authentic Link Directory Stream */
+        .directory-stream {
+            padding-left: 20px !important;
+            margin: 0 !important;
+            text-align: left !important;
+        }
+
+        .directory-stream li {
+            margin-bottom: 12px !important;
+            font-size: 0.98rem !important;
+            line-height: 1.6 !important;
+            list-style-type: disc !important;
+            color: #e4e4e7 !important;
+            text-align: left !important;
+        }
+
+        /* Neon Teal Bullets */
+        .directory-stream li::marker {
+            color: #22d3ee !important;
+        }
+
+        /* High Visibility Inline Links */
+        .directory-stream a {
+            color: #22d3ee !important;
+            text-decoration: none !important;
+            font-weight: 700 !important;
+        }
+
+        .directory-stream a:hover {
+            text-decoration: underline !important;
+        }
+
+        .item-desc {
+            color: #a1a1aa !important;
+        }
+
+        /* Bottom Curated Anchor Panel */
+        .curated-anchor {
+            margin-top: 60px !important;
+            padding-top: 24px !important;
+            border-top: 1px solid #27272a !important;
+            text-align: left !important;
+        }
+
+        .download-badge {
+            color: #ffffff !important;
+            background-color: #18181b !important;
+            border: 1px solid #3f3f46 !important;
+            padding: 10px 20px !important;
+            text-decoration: none !important;
+            border-radius: 6px !important;
+            font-size: 0.88rem !important;
+            font-weight: 600 !important;
+            display: inline-block !important;
+        }
+
+        .download-badge:hover {
+            border-color: #22d3ee !important;
+            color: #22d3ee !important;
         }
     </style>
 </head>
 <body>
 
-    <aside>
-        <h3>Wiki</h3>
-        <ul>
-            <li><a href="#utilities">📡 Global Utilities</a></li>
-            <li><a href="#android">🤖 Android Ecosystem</a></li>
-            <li><a href="#media">🎬 Media & Streaming</a></li>
-        </ul>
-    </aside>
-
-    <main>
-        <h1>𐌀Ꮤ𐌀𐌍</h1>
-        <div class="subtitle">Personal curated reference compilation indexes.</div>
-
-        <div id="utilities" class="section-header">Global Utilities & Live Tools</div>
-        <ul class="fmhy-list">
-            <li>
-                <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
-                <span class="desc">— Completely free, unfiltered public flight tracking network interface.</span>
-            </li>
-            <li>
-                <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
-                <span class="desc">— Real-time notification router for system alerts, logs, and custom hooks.</span>
-            </li>
-            <li>
-                <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
-                <span class="desc">— Visual map analysis tool adjusting for standard projection distortions.</span>
-            </li>
-            <li>
-                <a href="https://kialo.com" target="_blank">Kialo</a> 
-                <span class="desc">— Structured logic trees and complex argumentation database framework.</span>
-            </li>
-        </ul>
-
-        <div id="android" class="section-header">Android Deployment & Managers</div>
-        <ul class="fmhy-list">
-            <li>
-                <a href="https://f-droid.org" target="_blank">F-Droid</a> 
-                <span class="desc">— Foundational tracking-free library for verified open-source utility binaries.</span>
-            </li>
-            <li>
-                <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">Obtainium</a> 
-                <span class="desc">— Independent update pipeline pulling direct releases from raw developer code blocks.</span>
-            </li>
-        </ul>
-
-        <div id="media" class="section-header">Streaming Networks & Media</div>
-        <ul class="fmhy-list">
-            <li>
-                <a href="https://www.stremio.com" target="_blank">Stremio</a> 
-                <span class="desc">— Modular platform manager parsing system streams and network content protocols.</span>
-            </li>
-            <li>
-                <a href="https://creepiest.com" target="_blank">Creepiest</a> 
-                <span class="desc">— Curated internet archive tracking unusual and unique digital environments.</span>
-            </li>
-        </ul>
-
-        <div class="footer-vault">
-            <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download>📁 Download Complete Raw PDF Manifest Archive</a>
+    <header class="fmhy-topbar">
+        <div class="brand-section">
+            <span class="logo-text">𐌀Ꮤ𐌀𐌍</span>
         </div>
-    </main>
+        <div class="search-container">Search index, links, tools...</div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside class="wiki-sidebar">
+            <div class="sidebar-title">Wiki Navigation</div>
+            <ul class="sidebar-menu">
+                <li><a href="#utilities">📡 Global Utilities</a></li>
+                <li><a href="#android">🤖 Android Ecosystem</a></li>
+                <li><a href="#media">🎬 Media & Streaming</a></li>
+            </ul>
+        </aside>
+
+        <main class="wiki-content">
+            <h1 class="page-header">Directory</h1>
+            <div class="page-desc">Clean, unfiltered collection of decentralized systems and specialized resources.</div>
+
+            <div id="utilities" class="section-headline">Global Utilities & Live Tools</div>
+            <ul class="directory-stream">
+                <li>
+                    <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
+                    <span class="item-desc">— Unfiltered public flight tracking interface tracking raw crowd-sourced feeds.</span>
+                </li>
+                <li>
+                    <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
+                    <span class="item-desc">— Enterprise message router parsing system webhooks and events into live strings.</span>
+                </li>
+                <li>
+                    <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
+                    <span class="item-desc">— Interactive map workspace correcting cylindrical map projection scale errors.</span>
+                </li>
+                <li>
+                    <a href="https://kialo.com" target="_blank">Kialo</a> 
+                    <span class="item-desc">— Structured logic database built for clean relational claim mapping.</span>
+                </li>
+            </ul>
+
+            <div id="android" class="section-headline">Android Deployment & Managers</div>
+            <ul class="directory-stream">
+                <li>
+                    <a href="https://f-droid.org" target="_blank">F-Droid Ecosystem</a> 
+                    <span class="item-desc">— Tracking-free database serving verified cryptographic signed open utility installations.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">Obtainium Engine</a> 
+                    <span class="item-desc">— Deployment manager pulling clean pre-compiled assets straight from core repository pipelines.</span>
+                </li>
+            </ul>
+
+            <div id="media" class="section-headline">Streaming Networks & Media</div>
+            <ul class="directory-stream">
+                <li>
+                    <a href="https://www.stremio.com" target="_blank">Stremio Core</a> 
+                    <span class="item-desc">— Highly modular content protocol aggregator reading metadata links and stream directories.</span>
+                </li>
+                <li>
+                    <a href="https://creepiest.com" target="_blank">Creepiest Index</a> 
+                    <span class="item-desc">— Archival project logging unconventional web interfaces and unique digital artifacts.</span>
+                </li>
+            </ul>
+
+            <div class="curated-anchor">
+                <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download class="download-badge">📁 Download Complete Raw PDF Archive</a>
+            </div>
+        </main>
+    </div>
 
 </body>
 </html>
