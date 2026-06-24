@@ -5,68 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𐌀Ꮤ𐌀𐌍</title>
     <style>
+        /* Exact FMHY Clean List Clone - Premium Dark Mode */
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background-color: #090d13;
+            color: #adbac7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 40px;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
+
         h1 {
-            color: #00ffcc;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #21262d;
-            padding-bottom: 10px;
-        }
-        .section-title {
-            font-size: 1.2rem;
             color: #ffffff;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px dashed #30363d;
-            padding-bottom: 5px;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
-        .link-item {
-            margin-bottom: 12px;
-            line-height: 1.6;
+
+        .subtitle {
+            color: #768390;
             font-size: 0.95rem;
+            margin-bottom: 40px;
         }
-        .link-item a {
+
+        .section-header {
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #22272e;
+        }
+
+        .list-container {
+            padding-left: 20px;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            list-style-type: square;
+        }
+
+        /* Classy Cyber Accent Theme */
+        .list-item ::marker {
+            color: #00ffcc;
+        }
+
+        .list-item a {
             color: #00ffcc;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
-        .link-item a:hover {
+
+        .list-item a:hover {
             text-decoration: underline;
         }
-        .description {
-            color: #8b949e;
+
+        .desc {
+            color: #adbac7;
         }
-        .vault-footer {
+
+        .footer-vault {
             margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #21262d;
+            padding-top: 25px;
+            border-top: 1px solid #22272e;
             text-align: center;
         }
-        .vault-footer a {
+
+        .footer-vault a {
             color: #ffffff;
-            background: #161b22;
-            border: 1px solid #30363d;
-            padding: 10px 20px;
+            background-color: #1c2128;
+            border: 1px solid #444c56;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
-        .vault-footer a:hover {
+
+        .footer-vault a:hover {
             border-color: #00ffcc;
+            color: #00ffcc;
         }
     </style>
 </head>
@@ -74,57 +101,54 @@
 
     <div class="container">
         <h1>𐌀Ꮤ𐌀𐌍</h1>
+        <div class="subtitle">Personal curated reference compilation indexes.</div>
 
-        <div class="section-title">Global Utilities & Radar Tools</div>
-        
-        <div class="link-item">
-            <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
-            <span class="description">— Completely free, unfiltered public flight tracking network.</span>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
-            <span class="description">— Real-time notification router for custom tracking, webhooks, and alerts.</span>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
-            <span class="description">— Interactive map tool showing the real scale of landmasses.</span>
-        </div>
+        <div class="section-header">Global Utilities & Live Tools</div>
+        <ul class="list-container">
+            <li class="list-item">
+                <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
+                <span class="desc">— Completely free, unfiltered public flight tracking network interface.</span>
+            </li>
+            <li class="list-item">
+                <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
+                <span class="desc">— Real-time notification router for system alerts, logs, and custom hooks.</span>
+            </li>
+            <li class="list-item">
+                <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
+                <span class="desc">— Visual map analysis tool adjusting for standard projection distortions.</span>
+            </li>
+            <li class="list-item">
+                <a href="https://kialo.com" target="_blank">Kialo</a> 
+                <span class="desc">— Structured logic trees and complex argumentation database framework.</span>
+            </li>
+        </ul>
 
-        <div class="link-item">
-            <a href="https://kialo.com" target="_blank">Kialo</a> 
-            <span class="description">— Structured argumentation and logic-mapping database engine.</span>
-        </div>
+        <div class="section-header">Android Deployment & Managers</div>
+        <ul class="list-container">
+            <li class="list-item">
+                <a href="https://f-droid.org" target="_blank">F-Droid</a> 
+                <span class="desc">— Foundational tracking-free library for verified open-source utility binaries.</span>
+            </li>
+            <li class="list-item">
+                <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">Obtainium</a> 
+                <span class="desc">— Independent update pipeline pulling direct releases from raw developer code blocks.</span>
+            </li>
+        </ul>
 
-        <div class="section-title">Android Ecosystem & App Managers</div>
-        
-        <div class="link-item">
-            <a href="https://f-droid.org" target="_blank">F-Droid</a> 
-            <span class="description">— Open-source, clean, privacy-focused Android application library.</span>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">Obtainium</a> 
-            <span class="description">— Pulls app updates directly from developer source releases instead of app stores.</span>
-        </div>
+        <div class="section-header">Streaming Networks & Media</div>
+        <ul class="list-container">
+            <li class="list-item">
+                <a href="https://www.stremio.com" target="_blank">Stremio</a> 
+                <span class="desc">— Modular platform manager parsing system streams and network content protocols.</span>
+            </li>
+            <li class="list-item">
+                <a href="https://creepiest.com" target="_blank">Creepiest</a> 
+                <span class="desc">— Curated internet archive tracking unusual and unique digital environments.</span>
+            </li>
+        </ul>
 
-        <div class="section-title">Streaming & Media Layouts</div>
-        
-        <div class="link-item">
-            <a href="https://www.stremio.com" target="_blank">Stremio</a> 
-            <span class="description">— Media aggregator handling modular video protocols and multi-source link structures.</span>
-        </div>
-
-        <div class="section-title">Web Archives & Strange Corners</div>
-        
-        <div class="link-item">
-            <a href="https://creepiest.com" target="_blank">Creepiest</a> 
-            <span class="description">— Index logging unusual, strange, and fascinating digital artifacts.</span>
-        </div>
-
-        <div class="vault-footer">
-            <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download>📁 Download the full Raw Reference PDF Archive</a>
+        <div class="footer-vault">
+            <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download>📁 Download Complete Raw PDF Manifest Archive</a>
         </div>
     </div>
 
