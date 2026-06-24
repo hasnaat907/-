@@ -1,286 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𐌀Ꮤ𐌀𐌍 | Wiki</title>
-    <style>
-        /* Exact FMHY Wiki Interface Style Override */
-        html, body {
-            background-color: #09090b !important;
-            color: #e4e4e7 !important;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            text-align: left !important;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWAN | Resource Hub</title>
 
-        .fmhy-topbar {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            height: 56px !important;
-            background-color: #18181b !important;
-            border-bottom: 1px solid #27272a !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            padding: 0 24px !important;
-            z-index: 100 !important;
-            box-sizing: border-box !important;
-        }
+<style>
+/* =====================================================
+   FMHY-INSPIRED RESOURCE HUB
+   Single File Build
+   All styles internal to prevent cache bleed
+===================================================== */
 
-        .logo-text {
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            font-size: 1.1rem !important;
-            letter-spacing: 1px !important;
-        }
+*{
+    margin:0 !important;
+    padding:0 !important;
+    box-sizing:border-box !important;
+}
 
-        .search-container {
-            background-color: #27272a !important;
-            border: 1px solid #3f3f46 !important;
-            border-radius: 6px !important;
-            padding: 6px 12px !important;
-            width: 240px !important;
-            font-size: 0.85rem !important;
-            color: #a1a1aa !important;
-        }
+html{
+    scroll-behavior:smooth !important;
+}
 
-        .layout-wrapper {
-            display: flex !important;
-            margin-top: 56px !important;
-            min-height: calc(100vh - 56px) !important;
-            text-align: left !important;
-        }
+body{
+    background:#09090b !important;
+    color:#e4e4e7 !important;
+    font-family:Inter,Segoe UI,Roboto,sans-serif !important;
+    text-align:left !important;
+    min-height:100vh !important;
+    overflow-x:hidden !important;
+}
 
-        aside.wiki-sidebar {
-            width: 260px !important;
-            background-color: #18181b !important;
-            border-right: 1px solid #27272a !important;
-            position: fixed !important;
-            top: 56px !important;
-            bottom: 0 !important;
-            left: 0 !important;
-            padding: 24px !important;
-            box-sizing: border-box !important;
-            overflow-y: auto !important;
-            text-align: left !important;
-        }
+/* ==========================
+   TOP HEADER
+========================== */
 
-        .sidebar-title {
-            color: #a1a1aa !important;
-            font-size: 0.75rem !important;
-            font-weight: 700 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            margin-bottom: 12px !important;
-            text-align: left !important;
-        }
+.header{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    height:64px !important;
+    background:#0d0f12 !important;
+    border-bottom:1px solid #27272a !important;
 
-        .sidebar-menu {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 0 24px 0 !important;
-            text-align: left !important;
-        }
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
 
-        .sidebar-menu li {
-            margin-bottom: 8px !important;
-        }
+    padding:0 24px !important;
+    z-index:9999 !important;
+}
 
-        .sidebar-menu a {
-            color: #cbd5e1 !important;
-            text-decoration: none !important;
-            font-size: 0.9rem !important;
-            display: block !important;
-            padding: 4px 0 !important;
-        }
+.brand{
+    font-size:1.15rem !important;
+    font-weight:700 !important;
+    color:#ffffff !important;
+    letter-spacing:0.5px !important;
+    text-align:left !important;
+}
 
-        .sidebar-menu a:hover {
-            color: #00ffcc !important;
-        }
+.search-box{
+    width:320px !important;
+    max-width:100% !important;
+}
 
-        main.wiki-content {
-            margin-left: 260px !important;
-            padding: 40px 60px !important;
-            max-width: 840px !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            text-align: left !important;
-        }
+.search-box input{
+    width:100% !important;
+    height:40px !important;
+    padding:0 14px !important;
 
-        .page-header {
-            font-size: 2.2rem !important;
-            color: #ffffff !important;
-            font-weight: 800 !important;
-            margin: 0 0 6px 0 !important;
-        }
+    background:#18181b !important;
+    border:1px solid #27272a !important;
+    border-radius:8px !important;
 
-        .page-desc {
-            color: #a1a1aa !important;
-            font-size: 1rem !important;
-            margin-bottom: 32px !important;
-        }
+    color:#e4e4e7 !important;
+    outline:none !important;
 
-        .section-headline {
-            font-size: 1.4rem !important;
-            color: #ffffff !important;
-            font-weight: 700 !important;
-            margin: 40px 0 16px 0 !important;
-            padding-bottom: 8px !important;
-            border-bottom: 1px solid #27272a !important;
-        }
+    text-align:left !important;
+}
 
-        .directory-stream {
-            padding-left: 20px !important;
-            margin: 0 !important;
-            text-align: left !important;
-        }
+.search-box input::placeholder{
+    color:#71717a !important;
+}
 
-        .directory-stream li {
-            margin-bottom: 12px !important;
-            font-size: 0.98rem !important;
-            line-height: 1.6 !important;
-            list-style-type: disc !important;
-            color: #e4e4e7 !important;
-        }
+/* ==========================
+   SIDEBAR
+========================== */
 
-        .directory-stream li::marker {
-            color: #00ffcc !important;
-        }
+.sidebar{
+    position:fixed !important;
+    top:64px !important;
+    left:0 !important;
+    bottom:0 !important;
 
-        .directory-stream a {
-            color: #00ffcc !important;
-            text-decoration: none !important;
-            font-weight: 700 !important;
-        }
+    width:240px !important;
 
-        .directory-stream a:hover {
-            text-decoration: underline !important;
-        }
+    background:#18181b !important;
+    border-right:1px solid #27272a !important;
 
-        .item-desc {
-            color: #a1a1aa !important;
-        }
+    overflow-y:auto !important;
+}
 
-        .curated-anchor {
-            margin-top: 60px !important;
-            padding-top: 24px !important;
-            border-top: 1px solid #27272a !important;
-        }
+.sidebar-title{
+    padding:24px 20px 12px 20px !important;
+    color:#71717a !important;
+    font-size:0.75rem !important;
+    font-weight:700 !important;
+    text-transform:uppercase !important;
+    letter-spacing:1px !important;
+    text-align:left !important;
+}
 
-        .footer-title {
-            color: #71717a !important;
-            font-size: 0.85rem !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            margin-bottom: 15px !important;
-        }
+.nav-links{
+    list-style:none !important;
+}
 
-        .vault-grid {
-            display: flex !important;
-            gap: 12px !important;
-            flex-wrap: wrap !important;
-        }
+.nav-links li{
+    display:block !important;
+}
 
-        .download-badge {
-            color: #ffffff !important;
-            background-color: #18181b !important;
-            border: 1px solid #3f3f46 !important;
-            padding: 10px 18px !important;
-            text-decoration: none !important;
-            border-radius: 6px !important;
-            font-size: 0.85rem !important;
-            font-weight: 600 !important;
-            transition: all 0.2s ease !important;
-        }
+.nav-links a{
+    display:block !important;
+    padding:12px 20px !important;
 
-        .download-badge:hover {
-            border-color: #00ffcc !important;
-            color: #00ffcc !important;
-            background-color: #09090b !important;
-        }
-    </style>
+    color:#cbd5e1 !important;
+    text-decoration:none !important;
+    text-align:left !important;
+
+    transition:0.2s ease !important;
+}
+
+.nav-links a:hover{
+    background:#202024 !important;
+    color:#22d3ee !important;
+}
+
+/* ==========================
+   MAIN CONTENT
+========================== */
+
+.main{
+    margin-left:240px !important;
+    padding-top:64px !important;
+
+    width:calc(100% - 240px) !important;
+    text-align:left !important;
+}
+
+.content{
+    max-width:980px !important;
+
+    padding:48px 48px 80px 48px !important;
+
+    display:block !important;
+    text-align:left !important;
+}
+
+.page-title{
+    font-size:3rem !important;
+    font-weight:800 !important;
+    margin-bottom:12px !important;
+    text-align:left !important;
+}
+
+.page-subtitle{
+    color:#a1a1aa !important;
+    margin-bottom:42px !important;
+    text-align:left !important;
+    line-height:1.7 !important;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+.section{
+    margin-bottom:48px !important;
+}
+
+.section h2{
+    font-size:2rem !important;
+    font-weight:700 !important;
+    color:#f4f4f5 !important;
+
+    padding-bottom:14px !important;
+    margin-bottom:18px !important;
+
+    border-bottom:1px solid #27272a !important;
+
+    text-align:left !important;
+}
+
+.resource-list{
+    list-style:disc !important;
+    padding-left:18px !important;
+}
+
+.resource-list li{
+    margin-bottom:16px !important;
+    color:#cbd5e1 !important;
+    line-height:1.7 !important;
+    text-align:left !important;
+}
+
+.resource-list li::marker{
+    color:#22d3ee !important;
+}
+
+.resource-list a{
+    color:#22d3ee !important;
+    text-decoration:none !important;
+    font-weight:700 !important;
+}
+
+.resource-list a:hover{
+    text-decoration:underline !important;
+}
+
+.desc{
+    color:#a1a1aa !important;
+}
+
+/* ==========================
+   ARCHIVE PANEL
+========================== */
+
+.archive-panel{
+    margin-top:70px !important;
+
+    border-top:1px solid #27272a !important;
+
+    padding-top:28px !important;
+    text-align:left !important;
+}
+
+.archive-title{
+    font-size:1.4rem !important;
+    font-weight:700 !important;
+    margin-bottom:20px !important;
+    text-align:left !important;
+}
+
+.archive-buttons{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:12px !important;
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+}
+
+.archive-btn{
+    display:inline-flex !important;
+    align-items:center !important;
+
+    background:#18181b !important;
+    border:1px solid #27272a !important;
+
+    color:#e4e4e7 !important;
+    text-decoration:none !important;
+
+    padding:12px 16px !important;
+    border-radius:8px !important;
+
+    transition:0.2s ease !important;
+}
+
+.archive-btn:hover{
+    border-color:#22d3ee !important;
+    color:#22d3ee !important;
+    transform:translateY(-2px) !important;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+    .sidebar{
+        display:none !important;
+    }
+
+    .main{
+        margin-left:0 !important;
+        width:100% !important;
+    }
+
+    .content{
+        padding:32px 24px 80px 24px !important;
+    }
+
+    .page-title{
+        font-size:2.3rem !important;
+    }
+
+    .search-box{
+        width:200px !important;
+    }
+}
+
+@media (max-width:600px){
+
+    .header{
+        padding:0 14px !important;
+    }
+
+    .search-box{
+        width:150px !important;
+    }
+
+    .page-title{
+        font-size:2rem !important;
+    }
+
+    .archive-buttons{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header class="fmhy-topbar">
-        <div class="brand-section">
-            <span class="logo-text">𐌀Ꮤ𐌀𐌍</span>
-        </div>
-        <div class="search-container">Search index, links, tools...</div>
-    </header>
+<!-- ==========================
+     HEADER
+========================== -->
 
-    <div class="layout-wrapper">
-        <aside class="wiki-sidebar">
-            <div class="sidebar-title">Niches</div>
-            <ul class="sidebar-menu">
-                <li><a href="#shadow-codex">🥷 Shadow Codex V1</a></li>
-                <li><a href="#spicy-apps">🌶️ Spicy App Codex</a></li>
-                <li><a href="#smart-tv">📺 Smart TV & IPTV Codex</a></li>
-            </ul>
-        </aside>
+<header class="header">
+    <div class="brand">AWAN</div>
 
-        <main class="wiki-content">
-            <h1 class="page-header">Index Directory</h1>
-            <div class="page-desc">Curated index streams mapping direct source links parsed directly out of individual niche archives.</div>
-
-            <div id="shadow-codex" class="section-headline">The Shadow Codex V1</div>
-            <ul class="directory-stream">
-                <li>
-                    <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
-                    <span class="item-desc">— Unfiltered public flight tracking database tracking raw crowd-sourced feeds.</span>
-                </li>
-                <li>
-                    <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
-                    <span class="item-desc">— Enterprise message router parsing system webhooks and events into live strings.</span>
-                </li>
-                <li>
-                    <a href="https://creepiest.com" target="_blank">Creepiest Index</a> 
-                    <span class="item-desc">— Archival project logging unconventional web interfaces and unique digital artifacts.</span>
-                </li>
-                <li>
-                    <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
-                    <span class="item-desc">— Interactive map workspace correcting cylindrical map projection scale errors.</span>
-                </li>
-                <li>
-                    <a href="https://kialo.com" target="_blank">Kialo</a> 
-                    <span class="item-desc">— Structured logic database built for clean relational claim mapping.</span>
-                </li>
-            </ul>
-
-            <div id="spicy-apps" class="section-headline">The Spicy App Codex</div>
-            <ul class="directory-stream">
-                <li>
-                    <a href="https://f-droid.org" target="_blank">F-Droid Ecosystem</a> 
-                    <span class="item-desc">— Tracking-free database serving verified cryptographic signed open utility installations.</span>
-                </li>
-                <li>
-                    <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">Obtainium Engine</a> 
-                    <span class="item-desc">— Deployment manager pulling clean pre-compiled assets straight from core repository pipelines.</span>
-                </li>
-            </ul>
-
-            <div id="smart-tv" class="section-headline">The Smart TV & IPTV Codex</div>
-            <ul class="directory-stream">
-                <li>
-                    <a href="https://www.stremio.com" target="_blank">Stremio Core</a> 
-                    <span class="item-desc">— Highly modular content protocol aggregator reading metadata links and stream directories.</span>
-                </li>
-            </ul>
-
-            <div class="curated-anchor">
-                <div class="footer-title">Raw Source Archives</div>
-                <div class="vault-grid">
-                    <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download class="download-badge">📁 Shadow Codex V1.pdf</a>
-                    <a href="assets/docs/THE_SPICY_APP_CODEX.pdf" download class="download-badge">📁 Spicy App Codex.pdf</a>
-                    <a href="assets/docs/THE_SMART_TV_AND_IPTV_CODEX.pdf" download class="download-badge">📁 Smart TV & IPTV Codex.pdf</a>
-                </div>
-            </div>
-        </main>
+    <div class="search-box">
+        <input
+            type="text"
+            placeholder="Search index, links, tools..."
+        >
     </div>
+</header>
+
+<!-- ==========================
+     SIDEBAR
+========================== -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-title">
+        Wiki Navigation
+    </div>
+
+    <ul class="nav-links">
+        <li>
+            <a href="#utilities">🌐 Global Utilities</a>
+        </li>
+
+        <li>
+            <a href="#android">📱 Android Ecosystem</a>
+        </li>
+
+        <li>
+            <a href="#streaming">🎬 Media & Streaming</a>
+        </li>
+    </ul>
+
+</aside>
+
+<!-- ==========================
+     MAIN CONTENT
+========================== -->
+
+<main class="main">
+
+    <div class="content">
+
+        <h1 class="page-title">Directory</h1>
+
+        <p class="page-subtitle">
+            Clean, unfiltered collection of decentralized systems and
+            specialized resources.
+        </p>
+
+        <!-- ======================
+             SECTION 1
+        ======================= -->
+
+        <section id="utilities" class="section">
+
+            <h2>Global Utilities &amp; Live Tools</h2>
+
+            <ul class="resource-list">
+
+                <li>
+                    <a href="https://www.adsbexchange.com" target="_blank">
+                        ADSB Exchange
+                    </a>
+                    <span class="desc">
+                        — Unfiltered public flight tracking interface tracking raw crowd-sourced feeds.
+                    </span>
+                </li>
+
+                <li>
+                    <a href="https://notify.events" target="_blank">
+                        NOTIFY.Events
+                    </a>
+                    <span class="desc">
+                        — Enterprise message router parsing system webhooks and events into real-time strings.
+                    </span>
+                </li>
+
+                <li>
+                    <a href="https://thetruesize.com" target="_blank">
+                        The True Size Of
+                    </a>
+                    <span class="desc">
+                        — Interactive map workspace correcting cylindrical map projection scale errors.
+                    </span>
+                </li>
+
+                <li>
+                    <a href="https://kialo.com" target="_blank">
+                        Kialo
+                    </a>
+                    <span class="desc">
+                        — Structured logic database built for clean relational claim mapping.
+                    </span>
+                </li>
+
+                <li>
+                    <a href="https://creepiest.com" target="_blank">
+                        Creepiest Index
+                    </a>
+                    <span class="desc">
+                        — Archival project logging unconventional web interfaces and unique digital artifacts.
+                    </span>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- ======================
+             SECTION 2
+        ======================= -->
+
+        <section id="android" class="section">
+
+            <h2>Android Deployment &amp; Managers</h2>
+
+            <ul class="resource-list">
+
+                <li>
+                    <a href="https://f-droid.org" target="_blank">
+                        F-Droid Ecosystem
+                    </a>
+                    <span class="desc">
+                        — Tracking-free database serving verified cryptographic signed open utility installations.
+                    </span>
+                </li>
+
+                <li>
+                    <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">
+                        Obtainium Engine
+                    </a>
+                    <span class="desc">
+                        — Deployment manager pulling clean pre-compiled assets straight from core repository pipelines.
+                    </span>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- ======================
+             SECTION 3
+        ======================= -->
+
+        <section id="streaming" class="section">
+
+            <h2>Streaming Networks &amp; Media</h2>
+
+            <ul class="resource-list">
+
+                <li>
+                    <a href="https://www.stremio.com" target="_blank">
+                        Stremio Core
+                    </a>
+                    <span class="desc">
+                        — Highly modular content protocol aggregator reading metadata links and stream directories.
+                    </span>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- ======================
+             ARCHIVES
+        ======================= -->
+
+        <section class="archive-panel">
+
+            <h3 class="archive-title">
+                Raw Source Archives
+            </h3>
+
+            <div class="archive-buttons">
+
+                <a
+                    class="archive-btn"
+                    href="assets/docs/THE_SHADOW_CODEX_V1.pdf"
+                    download
+                >
+                    📁 Shadow Codex V1.pdf
+                </a>
+
+                <a
+                    class="archive-btn"
+                    href="assets/docs/THE_SPICY_APP_CODEX.pdf"
+                    download
+                >
+                    📁 Spicy App Codex.pdf
+                </a>
+
+                <a
+                    class="archive-btn"
+                    href="assets/docs/THE_SMART_TV_AND_IPTV_CODEX.pdf"
+                    download
+                >
+                    📁 Smart TV & IPTV Codex.pdf
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
 
 </body>
 </html>
