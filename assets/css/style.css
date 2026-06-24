@@ -146,3 +146,82 @@ main {
 .card a:hover {
     color: var(--accent-purple);
 }
+/* FMHY DESIGN SYSTEM SYSTEM REPAIR */
+.main-layout {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+aside {
+    flex: 0 0 250px;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.codex-section {
+    border-left: 2px solid #00ffcc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.codex-title {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+.res-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    padding: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #c9d1d9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+.res-card:hover {
+    border-color: #00ffcc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 204, 0.1);
+}
+.res-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.res-name {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+.res-tag {
+    font-size: 0.75rem;
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.res-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #8b949e;
+    margin: 0;
+}
