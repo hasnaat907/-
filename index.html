@@ -5,260 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𐌀Ꮤ𐌀𐌍</title>
     <style>
-        /* Modern FMHY Dark Hub Theme Overrides */
         body {
             background-color: #0d1117;
             color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
         }
-
-        header {
-            background-color: #161b22;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #21262d;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        header h1 {
+        h1 {
             color: #00ffcc;
-            margin: 0;
-            font-size: 1.8rem;
+            font-size: 2rem;
             letter-spacing: 2px;
-        }
-
-        #searchBar {
-            background: #010409;
-            border: 1px solid #30363d;
-            color: #c9d1d9;
-            padding: 10px 15px;
-            border-radius: 6px;
-            width: 300px;
-        }
-
-        .main-layout {
-            display: flex;
-            min-height: calc(100vh - 80px);
-        }
-
-        aside {
-            width: 260px;
-            background-color: #161b22;
-            padding: 30px 20px;
-            border-right: 1px solid #21262d;
-        }
-
-        aside h3 {
-            color: #8b949e;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-
-        aside ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        aside ul li {
-            margin-bottom: 15px;
-        }
-
-        aside ul li a {
-            color: #c9d1d9;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        aside ul li a:hover {
-            color: #00ffcc;
-        }
-
-        main {
-            flex: 1;
-            padding: 40px;
-            background-color: #0d1117;
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-        }
-
-        .codex-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .codex-title {
-            font-size: 1.4rem;
-            color: #ffffff;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            margin-bottom: 30px;
             border-bottom: 1px solid #21262d;
             padding-bottom: 10px;
         }
-
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
+        .section-title {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #30363d;
+            padding-bottom: 5px;
         }
-
-        .res-card {
+        .link-item {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .link-item a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+        .description {
+            color: #8b949e;
+        }
+        .vault-footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #21262d;
+            text-align: center;
+        }
+        .vault-footer a {
+            color: #ffffff;
             background: #161b22;
             border: 1px solid #30363d;
-            padding: 20px;
-            border-radius: 6px;
+            padding: 10px 20px;
             text-decoration: none;
-            color: #c9d1d9;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: border-color 0.2s, transform 0.2s;
-        }
-
-        .res-card:hover {
-            border-color: #00ffcc;
-            transform: translateY(-2px);
-        }
-
-        .res-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .res-name {
-            font-weight: 600;
-            color: #ffffff;
-            font-size: 1.05rem;
-        }
-
-        .res-tag {
-            font-size: 0.7rem;
-            background: rgba(0, 255, 204, 0.1);
-            color: #00ffcc;
-            padding: 3px 8px;
             border-radius: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
-
-        .res-desc {
-            font-size: 0.88rem;
-            line-height: 1.5;
-            color: #8b949e;
-            margin: 0;
-        }
-
-        .vault-download {
-            margin-top: 20px;
-            padding: 24px;
-            background: rgba(0, 255, 204, 0.03);
-            border: 1px dashed rgba(0, 255, 204, 0.3);
-            text-align: center;
-            border-radius: 6px;
-        }
-
-        .vault-download p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #8b949e;
-        }
-
-        .vault-download a {
-            color: #00ffcc;
-            text-decoration: none;
-            font-weight: 600;
-            margin-left: 5px;
-        }
-
-        .vault-download a:hover {
-            text-decoration: underline;
+        .vault-footer a:hover {
+            border-color: #00ffcc;
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <div class="container">
         <h1>𐌀Ꮤ𐌀𐌍</h1>
-        <input type="text" id="searchBar" placeholder="Search codexes, links, tools...">
-    </header>
 
-    <div class="main-layout">
-        <aside>
-            <h3>Categories</h3>
-            <ul>
-                <li><a href="#shadow-v1">The Shadow Codex V1</a></li>
-                <li><a href="#spicy-apps">The Spicy App Codex</a></li>
-                <li><a href="#tv-iptv">Smart TV & IPTV</a></li>
-            </ul>
-        </aside>
+        <div class="section-title">Global Utilities & Radar Tools</div>
+        
+        <div class="link-item">
+            <a href="https://www.adsbexchange.com" target="_blank">ADSB Exchange</a> 
+            <span class="description">— Completely free, unfiltered public flight tracking network.</span>
+        </div>
+        
+        <div class="link-item">
+            <a href="https://notify.events" target="_blank">NOTIFY.Events</a> 
+            <span class="description">— Real-time notification router for custom tracking, webhooks, and alerts.</span>
+        </div>
+        
+        <div class="link-item">
+            <a href="https://thetruesize.com" target="_blank">The True Size Of</a> 
+            <span class="description">— Interactive map tool showing the real scale of landmasses.</span>
+        </div>
 
-        <main>
-            <section id="shadow-v1" class="codex-section">
-                <div class="codex-title">The Shadow Codex V1</div>
-                <div class="resource-grid">
-                    <a href="https://elytra.com" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">Elytra</span><span class="res-tag">Radar</span></div>
-                        <p class="res-desc">Live real-time global flight radar tracking with complete telemetry diagnostics.</p>
-                    </a>
-                    <a href="https://notify.events" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">NOTIFY.Events</span><span class="res-tag">Alerts</span></div>
-                        <p class="res-desc">Spy-wire architecture for sending real-time custom topic push notifications across tools.</p>
-                    </a>
-                    <a href="https://creepiest.com" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">Creepiest</span><span class="res-tag">Archive</span></div>
-                        <p class="res-desc">Curated index tracking the internet's most strange, disturbing, and unusual corners.</p>
-                    </a>
-                    <a href="https://thetruesize.com" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">The True Size Of</span><span class="res-tag">Mapping</span></div>
-                        <p class="res-desc">Geographic tool visualizing real dimensions of landmasses without distortion variables.</p>
-                    </a>
-                    <a href="https://kialo.com" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">Kialo</span><span class="res-tag">Logic</span></div>
-                        <p class="res-desc">Structured debate engine mapping out complex lines of logic and cross-arguments cleanly.</p>
-                    </a>
-                </div>
-            </section>
+        <div class="link-item">
+            <a href="https://kialo.com" target="_blank">Kialo</a> 
+            <span class="description">— Structured argumentation and logic-mapping database engine.</span>
+        </div>
 
-            <section id="spicy-apps" class="codex-section">
-                <div class="codex-title">The Spicy App Codex</div>
-                <div class="resource-grid">
-                    <a href="https://f-droid.org" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">F-Droid Ecosystem</span><span class="res-tag">FOSS</span></div>
-                        <p class="res-desc">Verified compilation framework hosting clean, trackerless open-source Android installations.</p>
-                    </a>
-                    <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">Obtainium Pipeline</span><span class="res-tag">Updates</span></div>
-                        <p class="res-desc">App installer retrieving clean compiled releases directly from source HTML pipelines.</p>
-                    </a>
-                </div>
-            </section>
+        <div class="section-title">Android Ecosystem & App Managers</div>
+        
+        <div class="link-item">
+            <a href="https://f-droid.org" target="_blank">F-Droid</a> 
+            <span class="description">— Open-source, clean, privacy-focused Android application library.</span>
+        </div>
+        
+        <div class="link-item">
+            <a href="https://github.com/vfsfitvnm/Obtainium" target="_blank">Obtainium</a> 
+            <span class="description">— Pulls app updates directly from developer source releases instead of app stores.</span>
+        </div>
 
-            <section id="tv-iptv" class="codex-section">
-                <div class="codex-title">Smart TV & IPTV Codex</div>
-                <div class="resource-grid">
-                    <a href="https://www.stremio.com" target="_blank" class="res-card">
-                        <div class="res-header"><span class="res-name">Stremio Platform</span><span class="res-tag">Streaming</span></div>
-                        <p class="res-desc">Modular interface aggregate handling active multi-source link protocol streaming layers.</p>
-                    </a>
-                </div>
-            </section>
+        <div class="section-title">Streaming & Media Layouts</div>
+        
+        <div class="link-item">
+            <a href="https://www.stremio.com" target="_blank">Stremio</a> 
+            <span class="description">— Media aggregator handling modular video protocols and multi-source link structures.</span>
+        </div>
 
-            <div class="vault-download">
-                <p>Want it all in one place? <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download>Tap here to download the full comprehensive PDF Vault</a></p>
-            </div>
-        </main>
+        <div class="section-title">Web Archives & Strange Corners</div>
+        
+        <div class="link-item">
+            <a href="https://creepiest.com" target="_blank">Creepiest</a> 
+            <span class="description">— Index logging unusual, strange, and fascinating digital artifacts.</span>
+        </div>
+
+        <div class="vault-footer">
+            <a href="assets/docs/THE_SHADOW_CODEX_V1.pdf" download>📁 Download the full Raw Reference PDF Archive</a>
+        </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
