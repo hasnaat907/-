@@ -5,6 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𐌀Ꮤ𐌀𐌍</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Sliced Aesthetic Enhancements */
+        .codex-section {
+            margin-bottom: 40px;
+            border-left: 2px solid #00ffcc;
+            padding-left: 20px;
+        }
+        .codex-title {
+            font-size: 1.5rem;
+            color: #00ffcc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .res-card {
+            background: #0d1117;
+            border: 1px solid #21262d;
+            padding: 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #c9d1d9;
+            transition: all 0.2s ease;
+        }
+        .res-card:hover {
+            border-color: #00ffcc;
+            transform: translateY(-2px);
+        }
+        .res-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .res-name {
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .res-tag {
+            font-size: 0.7rem;
+            background: rgba(0, 255, 204, 0.1);
+            color: #00ffcc;
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .res-desc {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #8b949e;
+        }
+        .vault-download {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 255, 204, 0.05);
+            border: 1px dashed #00ffcc;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .vault-download a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,30 +86,65 @@
         <aside>
             <h3>Categories</h3>
             <ul>
-                <li><a href="#">The Shadow Codex</a></li>
-                <li><a href="#">Apps & IPTV</a></li>
-                <li><a href="#">Development & Hardware</a></li>
-                <li><a href="#">Open Source</a></li>
+                <li><a href="#shadow-v1">The Shadow Codex V1</a></li>
+                <li><a href="#spicy-apps">The Spicy App Codex</a></li>
+                <li><a href="#tv-iptv">Smart TV & IPTV</a></li>
             </ul>
         </aside>
 
         <main>
-            <div class="card">
-                <h3>The Shadow Codex V1</h3>
-                <p>Core collection of privacy tools, hidden resources, and web workarounds.</p>
-                <a href="#" target="_blank">Open Codex →</a>
-            </div>
+            <section id="shadow-v1" class="codex-section">
+                <div class="codex-title">The Shadow Codex V1</div>
+                <div class="resource-grid">
+                    <a href="https://elytra.com" target="_blank" class="res-card">
+                        <div class="res-header"><span class="res-name">Elytra</span><span class="res-tag">Radar</span></div>
+                        <p class="res-desc">Live real-time global flight radar tracking with complete telemetry diagnostics.</p>
+                    </a>
+                    <a href="https://notify.events" target="_blank" class="res-card">
+                        <div class="res-header"><span class="res-name">NOTIFY.Events</span><span class="res-tag">Alerts</span></div>
+                        <p class="res-desc">Spy-wire architecture for sending real-time custom topic push notifications map platforms.</p>
+                    </a>
+                    <a href="https://creepiest.com" target="_blank" class="res-card">
+                        <div class="res-header"><span class="res-name">Creepiest</span><span class="res-tag">Archive</span></div>
+                        <p class="res-desc">Curated index tracking the internet's most strange, disturbing, and unusual corners.</p>
+                    </a>
+                    <a href="https://thetruesize.com" target="_blank" class="res-card">
+                        <div class="res-header"><span class="res-name">The True Size Of</span><span class="res-tag">Mapping</span></div>
+                        <p class="res-desc">Geographic tool visualizing real dimensions of landmasses without standard projection distortions.</p>
+                    </a>
+                    <a href="https://kialo.com" target="_blank" class="res-card">
+                        <div class="res-header"><span class="res-name">Kialo</span><span class="res-tag">Logic</span></div>
+                        <p class="res-desc">Structured debate engine mapping out complex lines of logic and cross-arguments cleanly.</p>
+                    </a>
+                </div>
+            </section>
 
-            <div class="card">
-                <h3>The Spicy App Codex</h3>
-                <p>Curated list of modified, premium, and hard-to-find mobile applications.</p>
-                <a href="#" target="_blank">Open Codex →</a>
-            </div>
+            <section id="spicy-apps" class="codex-section">
+                <div class="codex-title">The Spicy App Codex</div>
+                <div class="resource-grid">
+                    <div class="res-card">
+                        <div class="res-header"><span class="res-name">F-Droid Ecosystem</span><span class="res-tag">FOSS</span></div>
+                        <p class="res-desc">Verified compilation framework hosting clean, trackerless open-source Android installations.</p>
+                    </div>
+                    <div class="res-card">
+                        <div class="res-header"><span class="res-name">Obtainium Pipeline</span><span class="res-tag">Updates</span></div>
+                        <p class="res-desc">App installer retrieving clean compiled releases directly from source repositories.</p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="card">
-                <h3>Smart TV & IPTV Codex</h3>
-                <p>Setup guides, links, and streaming resources for major TV platforms.</p>
-                <a href="#" target="_blank">Open Codex →</a>
+            <section id="tv-iptv" class="codex-section">
+                <div class="codex-title">Smart TV & IPTV Codex</div>
+                <div class="resource-grid">
+                    <div class="res-card">
+                        <div class="res-header"><span class="res-name">Stremio Platform</span><span class="res-tag">Streaming</span></div>
+                        <p class="res-desc">Modular interface aggregate handling active multi-source link protocol streaming layers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="vault-download">
+                <p>Want it all in one place? <a href="#" download>Tap here to download the full comprehensive PDF Vault</a></p>
             </div>
         </main>
     </div>
